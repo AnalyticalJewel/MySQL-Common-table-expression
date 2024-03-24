@@ -1,6 +1,6 @@
 /* Use a cross join in a query to find out how many male employees have never signed a contract with a
  salary value higher than or equal to the all-time company salary average (i.e. to obtain the same result
-  as in the previous exercise).
+  as in the previous exercise using count.
   task by : Jewel Alam*/
 
 with cte as( select avg(salary) as avg_salary from salaries)
