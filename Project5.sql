@@ -8,6 +8,7 @@ cte2 as
 and e.gender='f'
 group by s.emp_no) 
 select 
-sum( case when c2.highest_salary>c1.Avg_salary then 1 else 0 end) as highest_salary_above_average,
+Concat(Round((sum( case when c2.highest_salary>c1.Avg_salary then 1 else 0 end))/count((c2.emp_no))*100,2),%) 
+as highest_salary_above_average,
 count(c2.emp_no)as total_no_female_contract
 from cte2 c2 cross join cte1 c1;
